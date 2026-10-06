@@ -1,0 +1,280 @@
+.hero {
+    background-image: url("../images/hhh.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    color:#5c5959;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.42);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Contraste renforcé pour les deux appels à l'action du hero vidéo. */
+.hero .btn-danger,
+.hero .btn-outline-light {
+    background-color: #302e2e;
+    border-color: #302e2e;
+    color: #fff;
+}
+
+.hero .btn-danger:hover,
+.hero .btn-outline-light:hover {
+    background-color: #171616;
+    border-color: #171616;
+    color: #fff;
+}
+
+.presentation img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.galerie-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.galerie-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Les images mises en avant dans le carousel utilisent un format paysage 16:9. */
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto !important;
+    object-fit: cover;
+    object-position: center;
+}
+
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../images/herooo.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== Google Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===== Variables de couleurs personnalisées ===== */
+:root {
+    --couleur-principale: #5c5959; /* gris du texte du hero */
+    --couleur-secondaire: #7a7777;
+    --couleur-texte: #2C2C2C;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--couleur-texte);
+    padding-top: 76px; /* compense la navbar fixed-top, ajuste si besoin */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* ===== Surcharge des couleurs Bootstrap par les tiennes ===== */
+.btn-primary {
+    background-color: var(--couleur-principale);
+    border-color: var(--couleur-principale);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--couleur-secondaire);
+    border-color: var(--couleur-secondaire);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(92, 89, 89, 0.35);
+}
+
+/* Même palette grise pour les boutons Bootstrap rouge et bleu. */
+.btn-danger {
+    background-color: var(--couleur-principale);
+    border-color: var(--couleur-principale);
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover,
+.btn-primary:hover {
+    background-color: var(--couleur-secondaire);
+    border-color: var(--couleur-secondaire);
+}
+
+.btn-outline-primary {
+    color: var(--couleur-principale);
+    border-color: var(--couleur-principale);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--couleur-principale);
+    border-color: var(--couleur-principale);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+}
+
+.bg-primary {
+    background-color: var(--couleur-principale) !important;
+}
+
+.text-primary, .nav-link.active {
+    color: var(--couleur-principale) !important;
+}
+
+/* ===== Cards : ombres, coins arrondis, effet au survol ===== */
+.card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===== Page header (bandeau titre des sous-pages) ===== */
+.page-header {
+    background: linear-gradient(rgba(135, 56, 56, 0.75), rgba(212, 149, 163, 0.75)),
+                url("../images/heroo.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+}
+
+.breadcrumb-item.active {
+    opacity: 0.8;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #1e1e1e;
+}
+
+/* Logo circulaire du pied de page */
+footer img[alt="Logo"] {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.footer-link {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #fff;
+    padding-left: 5px;
+}
+
+/* ===== Navbar : petite animation sur les liens ===== */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: var(--couleur-principale);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* ===== Progress bars arrondies ===== */
+.progress {
+    height: 8px;
+    border-radius: 10px;
+}
+
+.progress-bar {
+    border-radius: 10px;
+}
+
+/* ===== Accordion : coins arrondis ===== */
+.accordion-item {
+    border-radius: 10px !important;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border: 1px solid #eee !important;
+}
+
+/* Accessibilité : le focus clavier reste visible sur tous les éléments interactifs. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f3c36b;
+    outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        min-height: 520px;
+        text-align: center;
+    }
+
+    .hero .btn {
+        width: 100%;
+        margin: .35rem 0;
+    }
+
+    .page-header {
+        padding: 3rem 0 !important;
+    }
+
+    .galerie-img {
+        height: 160px;
+    }
+}
